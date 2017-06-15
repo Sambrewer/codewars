@@ -26,3 +26,17 @@ function to_nato(words) {
   })
   return toNato.join(' ')
 }
+
+//which is in?
+
+function inArray(array1,array2){
+  let matches = []
+  for (let i = 0; i < array1.length; i++) {
+    for (let j = 0; j < array2.length; j++) {
+      if (array2[j].indexOf(array1[i]) !== -1 && matches.indexOf(array1[i]) === -1) {
+        matches.push(array1[i])
+      }
+    }
+  }
+  return matches;
+}
