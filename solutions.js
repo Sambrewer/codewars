@@ -38,5 +38,5 @@ function inArray(array1,array2){
       }
     }
   }
-  return matches;
+  return matches.sort();
 }
