@@ -40,3 +40,16 @@ function inArray(array1,array2){
   }
   return matches.sort();
 }
+
+//detect panagram
+
+function isPangram(string){
+  let alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+  let str = string.split('')
+  for (var i = 0; i < alphabet.length; i++) {
+    if (string.indexOf(alphabet[i]) === -1 && string.indexOf(alphabet[i].toUpperCase()) === -1) {
+      return false;
+    }
+  }
+  return true;
+}
