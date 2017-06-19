@@ -53,3 +53,23 @@ function isPangram(string){
   }
   return true;
 }
+
+//String Incrementor
+
+function incrementString (strng) {
+  strng = strng.split('')
+  for (var i = 0; i < strng.length; i++) {
+    if (Number(strng[i]) === 0 || Number(strng[i])) {
+      num = strng.splice(i, strng.length)
+      if (num.length > 1 && Number(num.join('')) < 10) {
+        for (var j = 0; j < num.length - 1; j++) {
+          strng.push('0')
+        }
+        strng.push(Number(num.join('')))
+      } else {
+        strng.splice(i, strng.length, (Number(num.join('') + 1)))
+      }
+    }
+  }
+  return strng.join('')
+}
