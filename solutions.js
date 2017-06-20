@@ -73,3 +73,22 @@ function incrementString (strng) {
   }
   return strng.join('')
 }
+
+//Camel Case converter
+
+function solution(string) {
+  let alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+  let newString = string.split('')
+  for (var i = 0; i < newString.length; i++) {
+    console.log(string[i], i)
+    if (alphabet.indexOf(string[i]) !== -1) {
+      console.log(string[i], i)
+      if (newString.indexOf(" ") !== -1) {
+        newString.splice(i + 1, 0, ' ')
+      } else {
+        newString.splice(i, 0, ' ')
+      }
+    }
+  }
+  return newString.join('')
+}
