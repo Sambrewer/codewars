@@ -92,3 +92,19 @@ function solution(string) {
   }
   return newString.join('')
 }
+
+//Divisors
+
+function divisors(integer) {
+ let results = [];
+ for (var i = 2; i < integer; i++) {
+   if (integer % i === 0) {
+     results.push(i)
+   }
+ }
+ if (results.length) {
+   return results;
+ } else {
+   return `${integer} is prime`;
+ }
+}
