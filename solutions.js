@@ -131,3 +131,30 @@ function longestSlideDown (pyramid) {
   }
   return result;
 }
+
+//Merged String Checker
+
+function isMerge(s, part1, part2) {
+  let ind = 0;
+  let ind2 = 0;
+  for (var i = 0; i < part1.length; i++) {
+    if (s.indexOf(part1[i]) >= ind){
+    ind = s.indexOf(part1[i])
+    } else {
+      return false;
+    }
+  }
+  for (var j = 0; j < part2.length; j++) {
+    if (s.indexOf(part2[j]) >= ind2) {
+      ind2 = s.indexOf(part2[j])
+    } else {
+      return false;
+    }
+  }
+  for (var k = 0; k < s.length; k++) {
+    if (part1.indexOf(s[k]) === -1 && part2.indexOf(s[k]) === -1) {
+      return false
+    }
+  }
+  return true;
+}
