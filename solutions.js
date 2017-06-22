@@ -108,3 +108,26 @@ function divisors(integer) {
    return `${integer} is prime`;
  }
 }
+
+//Pyramid Slidedown
+
+function longestSlideDown (pyramid) {
+  let result = 0;
+  result = pyramid[0][0]
+  for (var i = 0; i < pyramid.length; i++) {
+    let j = 0;
+    switch (pyramid[i][j]) {
+      case pyramid[i][j] < pyramid[i][j + 1]:
+        result += pyramid[i][j + 1]
+        j = j + 1
+        break;
+      case pyramid[i][j] < pyramid[i][j - 1]:
+        result += pyramid[i][j - 1]
+        j = j -1
+        break;
+      default:
+        result += pyramid[i][j]
+    }
+  }
+  return result;
+}
