@@ -158,3 +158,14 @@ function isMerge(s, part1, part2) {
   }
   return true;
 }
+
+//Largest 5 digit number in a series
+
+function solution(digits){
+  let digArr = digits.toString().split('')
+
+  let numsArr = digArr.map((num, ind) => {
+      return Number(digArr.join('').substring(ind, ind + 5))
+    })
+  return Math.max.apply(null, numsArr)
+}
