@@ -206,3 +206,19 @@ function dirReduc(arr) {
   return arr
 
 }
+
+// Perimeter of squares in a rectangle
+
+function perimeter(n) {
+  let start = 1;
+  let prev = 0;
+  let sides = 0;
+  for (var i = 0; i < n + 1; i++) {
+    let adding = prev
+    prev = start
+    sides += start
+    start += adding
+
+  }
+    return sides * 4
+}
