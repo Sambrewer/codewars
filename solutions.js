@@ -169,3 +169,24 @@ function solution(digits){
     })
   return Math.max.apply(null, numsArr)
 }
+
+// Hashtag Generator
+function generateHashtag (str) {
+  if (str == '') {
+    return false;
+  }
+  let arr = str.split(' ');
+  if (arr.join('').length > 140) {
+    return false;
+  }
+  arr.map((word, ind) => {
+    if (word[0] == word[0].toLowerCase() && word != '#' && word[0].toLowerCase()) {
+      word = word.split('');
+      word.splice(0, 1, word[0].toUpperCase())
+      word = word.join('');
+      return arr[ind] = word;
+    }
+  });
+  arr.unshift('#');
+  return arr.join('');
+}
