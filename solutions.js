@@ -190,3 +190,16 @@ function generateHashtag (str) {
   arr.unshift('#');
   return arr.join('');
 }
+
+// Every possible sum of two digits
+
+function digits(num) {
+  let results = [];
+  let nums = num.toString().split('');
+  for (var i = 0; i < nums.length; i++) {
+    for (var j = i + 1; j < nums.length; j++) {
+      results.push(Number(nums[i]) + Number(nums[j]));
+    }
+  }
+  return results;
+}
