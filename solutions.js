@@ -203,3 +203,28 @@ function digits(num) {
   }
   return results;
 }
+
+// Number Format
+
+var numberFormat = function(number) {
+  let digArr = number.toString().split('');
+  let counter =  0;
+  let negative = false;
+  if (digArr.indexOf('-')) {
+    digArr.splice(0, 1);
+    negative = true;
+  }
+  for (var i = digArr.length -  1; i >= 0; i--) {
+    if (i > 1) {
+      counter++;
+    }
+    if (counter % 3 == 0 && i != 0) {
+      digArr.splice(i, 0, ',')
+    }
+  }
+  if (negative) {
+    return digArr.unshift('-').join('');
+  } else {
+    return digArr.join('');
+  }
+}
