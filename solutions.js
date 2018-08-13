@@ -228,3 +228,35 @@ var numberFormat = function(number) {
     return digArr.join('');
   }
 }
+
+// ROT13
+
+function rot13(str) {
+  let alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+  str = str.split(' ');
+  str = str.map(word => {
+    word = word.split('');
+    word.map((letter,  ind) => {
+      if (alpha.indexOf(letter) != -1) {
+        //  console.log(alpha.indexOf(letter.toLowerCase()))
+        if (alpha.indexOf(letter) < 12) {
+          return word[ind] = alpha[alpha.indexOf(letter) + 13];
+        } else {
+          // console.log(13 - (26 - alpha. indexOf(letter.toLowerCase())))
+          return word[ind] = alpha[13 - (26 - alpha. indexOf(letter))];
+        }
+      } else if (alpha.indexOf(letter.toLowerCase()) != -1) {
+        if (alpha.indexOf(letter) < 12) {
+          return word[ind] = alpha[alpha.indexOf(letter.toLowerCase()) + 13].toUpperCase();
+        } else {
+          // console.log(13 - (26 - alpha. indexOf(letter.toLowerCase())))
+          return word[ind] = alpha[13 - (26 - alpha. indexOf(letter.toLowerCase()))].toUpperCase();
+        }
+      } else {
+        return letter;
+      }
+    });
+    return word.join('');
+  });
+  return str.join(' ');
+}
