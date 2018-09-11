@@ -260,3 +260,18 @@ function rot13(str) {
   });
   return str.join(' ');
 }
+
+// Isograms
+
+function isIsogram(str) {
+  let strArr = str.split('');
+  for (var i = 0; i < strArr.length; i++) {
+    let letter = strArr[i];
+    for (var j = i + 1; j < str.length; j++) {
+      if (strArr[j].toLowerCase() == letter.toLowerCase()) {
+        return false;
+      }
+    }
+  }
+  return true;
+ }
