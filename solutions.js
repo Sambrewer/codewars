@@ -275,3 +275,18 @@ function isIsogram(str) {
   }
   return true;
  }
+
+// Count the digit
+
+function nbDig(n, d) {
+  let counter = 0;
+  for (let i = 0; i <= n; i++) {
+    let squared = (i * i);
+    squared.toString().split('').map(dig => {
+      if (parseInt(dig) == d) {
+        counter += 1;
+      }
+    })
+  }
+  return counter;
+}
