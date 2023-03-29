@@ -19,3 +19,9 @@ export function humanYearsCatYearsDogYears(humanYears: number): [number, number,
     }
     return [humanYears,catYears,dogYears];
   }
+
+// Testing 1-2-3
+
+export function number(array: string[]): string[]{
+    return array.map((str, ind) => `${ind + 1}: ${str}`);
+}
