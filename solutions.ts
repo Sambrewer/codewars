@@ -25,3 +25,18 @@ export function humanYearsCatYearsDogYears(humanYears: number): [number, number,
 export function number(array: string[]): string[]{
     return array.map((str, ind) => `${ind + 1}: ${str}`);
 }
+
+// Wave
+
+export function wave(str: string): Array<string>{
+    const waveArr = [];
+    const strArr = str.split('');
+    for (let i = 0; i < strArr.length; i++) {
+      // waveArr.push(str.split('')[i].toUpperCase().join(''));
+      const strNew = strArr
+      i > 0 ? strNew[i - 1] = strArr[i - 1].toLowerCase() : null;
+      strNew[i] = strArr[i].toUpperCase();
+      waveArr.push(strNew.join(''));
+    }
+    return waveArr;
+  }
