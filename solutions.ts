@@ -40,3 +40,23 @@ export function wave(str: string): Array<string>{
     }
     return waveArr;
   }
+
+  //Complementary DNA
+
+  export class Kata {
+  static dnaStrand(dna: string) {
+    const dnaComp = dna.split('').map((str: string) => {
+      switch (str) {
+          case "A":
+            return "T";
+          case "T":
+            return "A";
+          case "C":
+            return "G";
+          case "G":
+            return "C";      
+      }
+    })
+    return dnaComp.join('')
+  }
+}
