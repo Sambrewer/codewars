@@ -60,3 +60,23 @@ export function wave(str: string): Array<string>{
     return dnaComp.join('')
   }
 }
+
+// Encode This
+
+export const encryptThis = (str: string): string => {
+  if (!str) {
+    return str;
+  }
+  const parseWord = (subStr: string): string => {
+    const strArr = subStr.split('');
+    strArr.splice(0, 1, strArr[0].charCodeAt(0).toString())
+    if (strArr.length > 1) {
+      strArr.splice(1, 0, strArr[strArr.length - 1])
+      strArr.pop()
+    }
+    return strArr.join('')
+  }
+
+  const encodedStr = str.split(" ").map(word => parseWord(word));
+  return encodedStr.join(" ")
+}
