@@ -80,3 +80,15 @@ export const encryptThis = (str: string): string => {
   const encodedStr = str.split(" ").map(word => parseWord(word));
   return encodedStr.join(" ")
 }
+
+// Narccisitic Numbers
+
+export function narcissistic(value: number): boolean {
+  // your code here
+  const numArr = value.toString().split('');
+  let total = 0;
+  for (let i = 0; i < numArr.length; i++) {
+    total += parseInt(numArr[i]) ** numArr.length
+  }
+  return total.toString() === numArr.join('');
+}
