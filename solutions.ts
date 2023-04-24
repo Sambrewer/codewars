@@ -92,3 +92,11 @@ export function narcissistic(value: number): boolean {
   }
   return total.toString() === numArr.join('');
 }
+
+// Count Vowels
+
+const getCount = (str: string): number => {
+  const vowels = ['a', 'e', 'i', 'o', 'u'];
+  let count = str.split('').filter(ltr => vowels.indexOf(ltr) != -1);
+  return count.length;
+}
