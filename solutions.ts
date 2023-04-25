@@ -100,3 +100,15 @@ const getCount = (str: string): number => {
   let count = str.split('').filter(ltr => vowels.indexOf(ltr) != -1);
   return count.length;
 }
+
+// Find longest
+
+let findLongest = (array:number[]):number => {
+  let longest = 0;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].toString().length > longest.toString().length) {
+      longest = array[i];
+    }
+  }
+  return longest;
+  }
