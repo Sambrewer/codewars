@@ -112,3 +112,30 @@ let findLongest = (array:number[]):number => {
   }
   return longest;
   }
+
+// Deadfish
+
+function parse(data: string): number[] {
+  let valArr = [];
+  let value = 0;
+
+  data.split('').map(cmd => {
+    switch (cmd) {
+      case 'i':
+        value++;
+        break;
+      case 'd':
+        value--;
+        break;
+      case 's':
+        value *= value;
+        break;
+      case 'o':
+        valArr.push(value);
+        break;
+      default:
+        break;
+    }
+  })
+  return valArr;
+}
