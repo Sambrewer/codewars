@@ -290,3 +290,17 @@ function nbDig(n, d) {
   }
   return counter;
 }
+
+// multiplication tables
+
+function multiplicationTable (size: number): number[][] {
+	const result = [];
+	for (let i = 1; i <= size; i++) {
+	  const row = [];
+	  for (let j = 1; j <= size; j++) {
+		row.push(i * j);
+	  }
+	  result.push(row);
+	}
+	return result;
+  }
