@@ -153,3 +153,24 @@ function matrixAddition(arr1: number[][], arr2: number[][]): number[][] {
 	}
 	return result;
 }
+
+// abbreviate words
+
+function abbreviation(str: string): string {
+	const words = str.split(' ');
+	const abbreviatedWords = words.map(word => {
+		if (word.length <= 3) {
+			return word;
+		}
+		if (word.includes("-")) {
+			const hyphenatedWords = word.split("-");
+			hyphenatedWords.map(word1 => {
+				return word1.split('').splice(1, word1.length - 2, (word1.length - 2).toString());
+			});
+			return hyphenatedWords.join('');
+		} else {
+			return word.split('').splice(1, word.length - 2, (word.length - 2).toString()).join('');
+		}
+	})
+	return abbreviatedWords.join(' ');
+}
