@@ -1,6 +1,6 @@
 // Human Years Cat Years Dog Years
 export function humanYearsCatYearsDogYears(
-    humanYears: number
+    humanYears: number,
 ): [number, number, number] {
     // Your code here!
     let catYears, dogYears;
@@ -192,4 +192,14 @@ export function sumPairs(ints: number[], s: number): [number, number] | void {
             }
         }
     }
+}
+
+// parse IPv4
+
+export function ipToInt32(ip: string): number {
+    return (
+        ip.split('.').reduce((accumulator, octet) => {
+            return (accumulator << 8) + parseInt(octet, 10);
+        }, 0) >>> 0
+    );
 }
