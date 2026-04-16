@@ -203,3 +203,12 @@ export function ipToInt32(ip: string): number {
         }, 0) >>> 0
     );
 }
+
+// get multiples of 3 or 5 and sum them
+export function solution(num: number): number {
+    return num <= 0
+        ? 0
+        : [...Array(num).keys()]
+              .filter((i) => i % 3 === 0 || i % 5 === 0)
+              .reduce((acc, cur) => acc + cur, 0);
+}
